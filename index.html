@@ -61,6 +61,8 @@
 	<script src="js/xivelyjs-1.0.0.min.js"></script>
 	<script src="js/d3.v2.js"></script>
 	<script src="js/rickshaw.min.js"></script>
+ 
+
 
 </head>
 <body>
@@ -263,6 +265,10 @@
                         
                         
                         <div class="row id">
+                        
+                        <!---------------   QUI  --->
+                        <div class="large column" id="dmap1" style="width:400px;height:200px"></div>
+                  
 							<div class="small-13inv"><strong>ID</strong></div>
 							<div class="small-13inv"></div>
 				</div>
@@ -316,8 +322,12 @@
 							<div class="large-8 columns value"></div>
 						</div>
 						<div class="row map">
-							<div class="large-4 columns"><strong>Map</strong></div>
-							<div class="large-8 columns value"><a href="#">View on Google Maps &raquo;</a></div>
+						  <div class="large-4 columns"><strong>Map</strong></div>
+
+                   
+              
+
+<div class="large-8 columns value"><a href="#">View on Google Maps &raquo;</a></div>
 						</div>
 					</div>
 				</div>
@@ -388,6 +398,18 @@
 
 	<script src="js/foundation.min.js"></script>
 	<script src="follows.js"></script>
+    <script src="https://maps.google.com/maps/api/js?v=3.11&sensor=false"></script>
+    
+    <!-- Script per Google Maps -->
+<script>
+var myOptions = {zoom:16, mapTypeId:google.maps.MapTypeId.ROADMAP, 	mapTypeControlStyle: google.maps.MapTypeControlStyle.DEFAULT, streetViewControl:true};
+var map = new google.maps.Map(document.getElementById("dmap1"), myOptions);
+var latlng = new google.maps.LatLng(45.5191438,9.0781437);
+<!-- var marker = new google.maps.Marker({map:map,position:latlng}); 
+map.setCenter(latlng);
+var pOptions = {position: latlng,pov: {heading:0,pitch: 0}};
+map.setStreetView(p); 
+</script>
 
 </body>
 </html>
