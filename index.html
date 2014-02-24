@@ -12,30 +12,12 @@
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width" />
-	<title>DABPUMPS Sensor Viewer</title>
+	<title>DABPUMPS Sensor Viewer (DEMO)</title>
 
 	<link type="text/css" rel="stylesheet" href="css/normalize.css" />
 	<link type="text/css" rel="stylesheet" href="css/foundation.min.css" />
 	<link type="text/css" rel="stylesheet" href="css/rickshaw.min.css">
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" type="text/css" media="all" />
-<!-- inserire Google mappa es.2 -->
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true&language=it"></script>
-
-<script type="text/javascript">
-function initialize(){ // a
-   var latlng = new google.maps.LatLng(43.707, 10.610); // b
-   var myOptions = { // c
-      zoom: 18,
-      center: latlng,
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR}
-   }
-   mymap = new google.maps.Map(document.getElementById("map"), myOptions); // d
-}
-</script>
-<!-- inserire Google mappa es.2 FINE-->
-
 
 
 	<style type="text/css">
@@ -181,9 +163,9 @@ function initialize(){ // a
 				<div class="large-2 columns">&nbsp;</div>
 				<div class="large-8 columns">
 					<br/><br/><br/>
-					<h1 class="subheader" style="text-align: center;">Uh oh!</h1>
-					<h2 class="subheader" style="text-align: center;">Your API key is invalid!</h2>
-					<p>Please try again or generate a new key on Xively. It is important to keep in mind that this API key must be a global API key in order to work in this example. Using an application-specific API key will cause this example to malfunction.</p>
+					<h1 class="subheader" style="text-align: center;">Attention!</h1>
+					<h2 class="subheader" style="text-align: center;">Your key is invalid!</h2>
+					<p>Please try again.</p>
 
 					<a href="#" data-reveal-id="exampleModal" class="openStart radius secondary button expand">Ready When You Are...</a>
 					<br/><br/><br/>
@@ -197,8 +179,8 @@ function initialize(){ // a
 				<div class="large-8 columns">
 					<br/><br/><br/>
 					<br/><br/><br/>
-					<h1 class="subheader" style="text-align: center;">Connected to Xively!</h1>
-					<h5 class="subheader text-center">To begin visualizing data, enter your Xively feed information above...</h5>
+					<h1 class="subheader" style="text-align: center;">Connected!</h1>
+					<h5 class="subheader text-center">To begin visualizing data, enter your feed.</h5>
 				</div>
 				<div class="large-2 columns">&nbsp;</div>
 			</div>
@@ -244,7 +226,7 @@ function initialize(){ // a
 			<div class="feed hidden" id="exampleFeedNotFound" style="line-height: 25px; padding-top: 25px;">
 				<div class="row title">
 					<div class="large-12 columns">
-						<h2 class="subheader value">Loading Feed Data...</h2>
+						<h2 class="subheader value">Loading Data...</h2>
 
 						<div class="alert alert-box no-info">
 							Sorry, this feed could not be found.
@@ -255,7 +237,7 @@ function initialize(){ // a
 			<div class="feed hidden" id="exampleFeed" style="line-height: 25px; padding-top: 25px;">
 				<div class="row title">
 					<div class="large-12 columns">
-						<h2 class="subheader value">Loading Feed Data...</h2>
+						<h2 class="subheader value">Loading Data...</h2>
 					</div>
 				</div>
 			<div class="row">
@@ -310,28 +292,41 @@ function initialize(){ // a
 							<div class="large-4 columns"><strong>Last Updated</strong></div>
 							<div class="large-8 columns value"></div>
 				</div>
-						<div class="row tags">
-							<div class="large-4 columns"><strong>Tags</strong></div>
-							<div class="large-8 columns value"></div>
-						</div>
+                
+              
+                        
 			  </div>
 					<div class="large-5 columns">
 						<h4 class="subheader">Location</h4>
 						<div class="alert alert-box hidden no-location">
 							No location information.
-						</div>
+					</div>
+                        
 					<div class="row location-name">
 						  <div class="large-4 columns"><strong>Name</strong></div>
 							<div class="large-8 columns value"></div>
+					</div>
+                    
+                        <div class="row location-name">
+						  <div class="large-4 columns"><strong>Address</strong></div>
+							<div class="large-8 columns">S.S. del Sempione n. 28 - Rho</div>
 						</div>
+                        
+                        <div class="row tags">
+							<div class="large-4 columns"><strong>ContactTags</strong></div>
+							<div class="large-8 columns value"></div>
+						</div>
+                                                                
 						<div class="row latitude">
 							<div class="small-13inv"><strong>Latitude</strong></div>
 							<div class="small-13inv value"></div>
 						</div>
+                        
 						<div class="row longitude">
 							<div class="small-13inv"><strong>Longitude</strong></div>
 							<div class="small-13inv value"></div>
 						</div>
+                        
 						<div class="row elevation">
 							<div class="large-4 columns"><strong>Elevation</strong></div>
 							<div class="large-8 columns value"></div>
@@ -343,18 +338,17 @@ function initialize(){ // a
 						<div class="row map">
 							<div class="small-13inv columns"><strong>Map</strong></div>
 							<div class="small-13inv columns value"><a href="#">View on Google Maps &raquo;</a></div>
-                          <p>  
-                         <h4 class="subheader large-8 columns">ID Info</h4>
-                        <div class="large-8 columns"><strong>Mac Address</strong></div>
-                        	<div class="large-8 columns">01:23:45:67:89</div>
-						<div class="large-8 columns"><strong>Serial Number</strong></div>
-                        	<div class="large-8 columns">0123456789</div>
-                        <div class="large-12 columns"><strong>Tag3</strong></div>
-                        
-                            
-						</div>
+                          <p> 
+                          
+                         <div class="subheader large-8 columns "><strong>ID Info</strong></div>
+                        	<div class="large-8 columns"><strong>Mac Address</strong></div>
+                        	<div class="large-4 columns">01:23:45:67:89</div>
+							<div class="large-8 columns"><strong>Serial Number</strong></div>
+                        	<div class="large-4 columns">000123456789</div>
+                         </div>
 					</div>
 				</div>
+                
 				<div class="row">
 					<div class="large-12 columns">
 						<div class="button-group" style="float: right;">
